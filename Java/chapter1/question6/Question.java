@@ -1,16 +1,18 @@
 public class Question {
-    public rotate(int[][] matrix) {
-        int n = matrix.length; 
-        
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                int tmp = matrix[i][j];
-                
-                matrix[i][j] = matrix[n-j][i];
-                matrix[n-j][i] = matrix[n-i][n-j];
-                matrix[n-i][n-j] = matrix[j][n-i];
-                matrix[j][n-i] = tmp;
+    public String compress(String s) {
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            count++;
+
+            if (s.charAt(i + 1) != s.charAt(i) || i + 1 >= s.length()) {
+                sb.append(s.charAt(i));
+                sb.append(count);
+                count = 0;
             }
         }
-    }    
+
+        return sb.toString();
+    }
 }

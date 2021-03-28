@@ -1,8 +1,10 @@
+package Java.chapter1.question3;
+
 public class Question {
     public static void replaceSpaces(char[] str, int trueLength) {
         int spaceCount = 0, index, i = 0; 
 
-        for (int i = 0; i < trueLength; i++) {
+        for (i = 0; i < trueLength; i++) {
             if (str[i] == ' ') {
                 spaceCount++;
             }
@@ -23,6 +25,4 @@ public class Question {
             }
         }
     }
-
-
 }

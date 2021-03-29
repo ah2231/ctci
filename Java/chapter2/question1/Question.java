@@ -1,33 +1,18 @@
 public class Question {
-    public void deleteDups(LinkedListNode n) {
-        HashSet<Integer> set = new HashSet<Integer>();
-        LinkedListNode previous = null; 
-        while ( n != null) {
-            if (set.contains(n.data)) {
-                previous.next = n.next;
-            } else {
-                set.add(n.data);
-                previous = n;
-            }
+    LinkedListNode nthToLast(LinkedListNode head, int k) {
+        LinkedListNode p1 = head;
+        LinkedListNode p2 = head;
 
-            n = n.next;
+        for (int i = 0; i < k; i++) {
+            if (p1 == null) return null;
+            p1 = p1.next;
         }
-    }
 
-    public void deleteDups(LinkedListNode head) {
-        LinkedListNode cur = head; 
-        while (current != null) {
-            ListListNode runner = current; 
-
-            while (runner.next != null) {
-                if (runner.next.data == current.data) {
-                    runner.next = runner.next.next; 
-                } else {
-                    runner = runner.next; 
-                }
-            }
-
-            current = current.next; 
+        while (p1 != null) {
+            p1 = p1.next;
+            p2 = p2.next;
         }
+
+        return p2;
     }
 }
